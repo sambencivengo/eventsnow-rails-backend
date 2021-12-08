@@ -7,6 +7,10 @@ skip_before_action :authorize
     render json: attendance, status: :created
   end
 
+  def index
+    attendances = Attendance.all
+    render json: attendances
+  end
   private
 
   def attendance_params

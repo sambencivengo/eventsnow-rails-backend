@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :attendances, only: [:create, :destroy]
+  resources :attendances, only: [:create, :destroy, :index]
   resources :events
   resources :locations
   resources :users

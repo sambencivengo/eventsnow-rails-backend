@@ -1,5 +1,8 @@
 class AttendanceSerializer < ActiveModel::Serializer
-  attributes :id, :host, :event_id, :user_id
+  attributes  :host
   has_one :user
   has_one :event
 end
+
+
+
