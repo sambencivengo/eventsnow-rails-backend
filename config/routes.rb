@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/host", to: "attendances#host"
   get "/attending", to: "attendances#attending"
+  get "/attending_not_host", to: "attendances#attending_not_host"
+  get "/others", to: "attendances#other_attendances"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
