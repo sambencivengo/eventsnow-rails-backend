@@ -39,15 +39,6 @@ Location.create(location_name: Faker::Restaurant.name, address: Faker::Address.s
 Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
 Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
 Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, date: Faker::Date.between(from: '2021/12/20', to: '2022/12/31'), description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
 
 
 

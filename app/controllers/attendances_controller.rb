@@ -2,10 +2,21 @@ class AttendancesController < ApplicationController
 # skip_before_action :authorize, only: [:attending, :host]
 
 
+# RSVP
   def create
     attendance = Attendance.create!(attendance_params)
-    render json: attendance, status: :created
+    render json: attendance
   end
+# THIS FILTERS
+  def parties
+    attendances = Attendance.all - @current_user.attendances
+    render json: attendances
+  end
+
+
+
+
+
 
   def index
     attendances = Attendance.all
@@ -29,16 +40,23 @@ class AttendancesController < ApplicationController
     render json: attendances
   end
 
- 
-  def other_attendances
-    # getting rid of user
-    attendances = Attendance.all.select{|a| a.user_id != @current_user.id}.each.uniq{|a| a.event.id}  
-    # no_dupes = attendances
-    render json: attendances
-  end  
-
-
   
+  # def other_attendances
+  #   # getting rid of user
+  #   attendances = Attendance.all - @current_user.attendances
+  #   # attendances = Attendance.all.select{|a| a.user_id != @current_user.id}  
+  #   no_dupes = attendances.uniq
+  #   render json: no_dupes
+  # end  
+  def destroy
+    attendance = Attendance.find(params[:id])
+    attendance.delete
+  end
+
+  # def destroy
+  #   session.delete :user_id
+  #   render json: "Log out successful"
+  # end
 
 
   private
