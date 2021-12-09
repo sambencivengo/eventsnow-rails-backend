@@ -24,15 +24,17 @@ class AttendancesController < ApplicationController
   end
 
   def attending
+    # lolwhat = current_user.attendances
     attendances = Attendance.where(user_id: @current_user.id)
     render json: attendances
   end
 
+ 
   def other_attendances
-    attendances = Attendance.all.select{|a| a.user_id != @current_user.id}
-    #filter any event Id that appears more than once
-    no_dupes = attendances.each.uniq{|a| a.event.id}  
-    render json: no_dupes
+    # getting rid of user
+    attendances = Attendance.all.select{|a| a.user_id != @current_user.id}.each.uniq{|a| a.event.id}  
+    # no_dupes = attendances
+    render json: attendances
   end  
 
 
@@ -40,6 +42,7 @@ class AttendancesController < ApplicationController
 
 
   private
+  
 
   def attendance_params
     params.permit(:user_id, :event_id, :host)
