@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
-skip_before_action :authorize
+# skip_before_action :authorize
 
 
   def create
@@ -11,6 +11,23 @@ skip_before_action :authorize
     attendances = Attendance.all
     render json: attendances
   end
+
+  def host
+    attendances = Attendance.where(host: true, user_id: @current_user.id)
+    render json: attendances
+  end
+
+  def attending
+    attendances = Attendance.where(host: false, user_id: @current_user.id)
+    render json: attendances
+  end
+
+    
+
+
+  
+
+
   private
 
   def attendance_params

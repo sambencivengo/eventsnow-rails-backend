@@ -5,11 +5,18 @@ class EventsController < ApplicationController
     render json: events    
   end
 
+
+
+
+
   def create
     @current_event = Event.create!(event_params)
     Attendance.create(host: true, user_id: @current_user.id, event_id: @current_event.id)
     render json: @current_event, status: :created
   end
+
+
+    
 
 
   private
