@@ -8,10 +8,10 @@ class AttendancesController < ApplicationController
     render json: attendance
   end
 # THIS FILTERS
-  def parties
-    attendances = Attendance.all - @current_user.attendances
-    render json: attendances
-  end
+  # def parties
+  #   attendances = Attendance.all - @current_user.attendances
+  #   render json: attendances
+  # end
 
 
 
@@ -41,13 +41,14 @@ class AttendancesController < ApplicationController
   end
 
   
-  # def other_attendances
-  #   # getting rid of user
-  #   attendances = Attendance.all - @current_user.attendances
-  #   # attendances = Attendance.all.select{|a| a.user_id != @current_user.id}  
-  #   no_dupes = attendances.uniq
-  #   render json: no_dupes
-  # end  
+  def other_attendances
+    # getting rid of user
+    attendances = Attendance.all - @current_user.attendances
+    # attendances = Attendance.all.select{|a| a.user_id != @current_user.id}  
+    no_dupes = attendances.uniq
+    render json: no_dupes
+  end  
+
   def destroy
     attendance = Attendance.find(params[:id])
     attendance.delete

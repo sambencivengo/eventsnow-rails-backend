@@ -52,28 +52,6 @@ Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, ho
 Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
 Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
 Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
-Attendance.create(event_id: Event.all.sample.id, user_id: User.all.sample.id, host: false )
 
 
 puts "seeing finished 🌱"
