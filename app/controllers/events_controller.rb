@@ -15,6 +15,19 @@ class EventsController < ApplicationController
     render json: @current_event, status: :created
   end
 
+  def update
+    event = Event.all.find(params[:id])
+    event.update!(event_params)
+    render json: event
+  end
+
+  def destroy
+    event = Event.all.find(params[:id])
+    event.attendances.delete
+    event.delete
+    render json: {}
+  end
+
 
     
 

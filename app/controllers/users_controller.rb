@@ -11,7 +11,7 @@ end
 
 
   def show
-    render json: @current_user.id
+    render json: @current_user
   end
 
   private

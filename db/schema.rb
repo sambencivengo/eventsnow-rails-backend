@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_012131) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "attendances", "events"
-  add_foreign_key "attendances", "users"
+  add_foreign_key "attendances", "events", on_delete: :cascade
+  add_foreign_key "attendances", "users", on_delete: :cascade
   add_foreign_key "events", "locations"
 end
