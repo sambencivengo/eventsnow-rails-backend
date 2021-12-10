@@ -4,7 +4,9 @@ class AttendancesController < ApplicationController
 
 # RSVP
   def create
-    attendance = Attendance.create!(attendance_params)
+    attendance = Attendance.new(attendance_params)
+    attendance.user = current_user
+    attendance.save
     render json: attendance
   end
 # THIS FILTERS

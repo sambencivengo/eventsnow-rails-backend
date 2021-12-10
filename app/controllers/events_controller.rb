@@ -23,7 +23,6 @@ class EventsController < ApplicationController
 
   def destroy
     event = Event.all.find(params[:id])
-    event.attendances.delete
     event.delete
     render json: {}
   end
