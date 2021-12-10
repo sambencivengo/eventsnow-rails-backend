@@ -36,9 +36,12 @@ Location.create(location_name: Faker::Restaurant.name, address: Faker::Address.s
 Location.create(location_name: Faker::Restaurant.name, address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip )
 Location.create(location_name: Faker::Restaurant.name, address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip )
 
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
-Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id)
+Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id, city: Faker::Address.city, address: Faker::Address.street_address, state: Faker::Address.state, zipcode: Faker::Address.zip)
+Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id, city: Faker::Address.city, address: Faker::Address.street_address, state: Faker::Address.state, zipcode: Faker::Address.zip  )
+Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id, city: Faker::Address.city, address: Faker::Address.street_address, state: Faker::Address.state, zipcode: Faker::Address.zip  )
+Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id, city: Faker::Address.city, address: Faker::Address.street_address, state: Faker::Address.state, zipcode: Faker::Address.zip  )
+Event.create(event_name: Faker::Job.field + " Conference", category: Faker::Hobby.activity, description: Faker::Lorem.paragraph(sentence_count: 4), location_id: Location.all.sample.id, city: Faker::Address.city, address: Faker::Address.street_address, state: Faker::Address.state, zipcode: Faker::Address.zip  )
+
 
 
 
