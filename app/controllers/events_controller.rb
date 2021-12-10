@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
 
 
-
+# adasdasd
 
   def create
     @current_event = Event.create!(event_params)
