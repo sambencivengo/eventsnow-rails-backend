@@ -31,7 +31,7 @@ skip_before_action :authorize, only: [:attending, :host, :create]
 
 
   def host
-    attendances = Attendance.where(host: true, user_id: @current_user.id)
+    attendances = Attendance.where(host: true, user_id: current_user.id)
     render json: attendances
   end
 

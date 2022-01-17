@@ -26,7 +26,8 @@ class EventsController < ApplicationController
     event = Event.all.find(params[:id])
     event.attendances.delete
     event.delete
-    render json: {}
+    events = Attendance.where(host: true, user_id: current_user.id)
+    render json: events
   end
 
 
