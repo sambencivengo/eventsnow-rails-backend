@@ -1,11 +1,15 @@
 class AttendancesController < ApplicationController
-# skip_before_action :authorize, only: [:attending, :host]
+skip_before_action :authorize, only: [:attending, :host, :create]
 
 
 # RSVP
   def create
-    attendance = Attendance.create!(attendance_params)
-    render json: attendance
+    attendance = Attendance.create(attendance_params)
+    if attendance.valid?
+      render json: attendance, status: :created
+    else
+      render json: { error: attendance.errors }, status: :unprocessable_entity
+    end
   end
 # THIS FILTERS
   # def parties
