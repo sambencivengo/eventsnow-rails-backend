@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
 
   def index
-    events = Event.all
-    render json: events    
+    events = Event.all - current_user.events
+
+    render json: events
   end
 
 

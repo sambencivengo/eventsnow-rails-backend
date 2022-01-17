@@ -36,13 +36,15 @@ skip_before_action :authorize, only: [:attending, :host, :create]
   end
 
   def attending_not_host
-    attendances = Attendance.where(host: false, user_id: @current_user.id)
+    # attendances = Attendance.where(host: false, user_id: @current_user.id)
+    attendances = current_user.attendances.where
     render json: attendances
   end
 
   def attending
     # lolwhat = current_user.attendances
-    attendances = Attendance.where(user_id: @current_user.id)
+    # attendances = Attendance.where(user_id: @current_user.id)
+    attendances = current_user.attendances.where(host: false)
     render json: attendances
   end
 
@@ -52,6 +54,7 @@ skip_before_action :authorize, only: [:attending, :host, :create]
     attendances = Attendance.all - @current_user.attendances
     # attendances = Attendance.all.select{|a| a.user_id != @current_user.id}  
     no_dupes = attendances.uniq
+
     render json: no_dupes
   end  
 
