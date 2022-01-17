@@ -5,8 +5,10 @@ skip_before_action :authorize, only: [:attending, :host, :create]
 # RSVP
   def create
     attendance = Attendance.create(attendance_params)
+    user = User.find_by(id: session[:user_id])
+    attendances = Attendance.where(host: false, user_id: !user.id)
     if attendance.valid?
-      render json: attendance, status: :created
+      render json: attendances, status: :created
     else
       render json: { error: attendance.errors }, status: :unprocessable_entity
     end
@@ -56,6 +58,8 @@ skip_before_action :authorize, only: [:attending, :host, :create]
   def destroy
     attendance = Attendance.find(params[:id])
     attendance.delete
+    attendances = @current_user.attendances.where(host: false)
+    render json: attendances
   end
 
   # def destroy
