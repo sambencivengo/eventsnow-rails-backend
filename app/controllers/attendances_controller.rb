@@ -6,9 +6,9 @@ skip_before_action :authorize, only: [:attending, :host, :create]
   def create
     attendance = Attendance.create(attendance_params)
     user = User.find_by(id: session[:user_id])
-    attendances = Attendance.where(host: false, user_id: !user.id)
+    events = Event.all - current_user.events
     if attendance.valid?
-      render json: attendances, status: :created
+      render json: events, status: :created
     else
       render json: { error: attendance.errors }, status: :unprocessable_entity
     end
